@@ -61,3 +61,6 @@ crashlytics-build.properties
 # MyAssets
 Assets/MyAssets/Motions*
 Assets/MyAssets/Models*
+# PDFViewer
+Assets/Paroxe*
+
