@@ -17,24 +17,24 @@ public class PDFCustomRenderer : MonoBehaviour
         pageNum = pdfDocument.GetPageCount();
     }
 
-    void Update()
+    void LateUpdate()
     {
         StartCoroutine("PressTheButton");
     }
 
     private IEnumerator PressTheButton()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKeyUp("left"))
         {
             p = Mathf.Max(--p, 0);
         }
-        else if (Input.GetKey("right") && pageNum > p)
+        else if (Input.GetKeyUp("right") && pageNum > p)
         {
             p++;
         }
         RenderPDF(p);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return null;
     }
 
     private void RenderPDF(int p)
