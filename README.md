@@ -30,3 +30,9 @@ Assets/MyAssets/Motions/
 │   └── standing_discuss_m_270744.json
 ```
 
+- Parameter
+  - U Lip Sync
+    - Output Sound Gain: 0
+  - U Lip Sync Microphonne
+    - Is Auto Start: true
+
