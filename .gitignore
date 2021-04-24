@@ -65,3 +65,5 @@ Assets/MyAssets/Models*
 Assets/Paroxe*
 Assets/MyAssets/PDFs*
 Assets/University Classroom*
+# Scripts/Core/Algorithm.csのBurstオプションを無効にしている
+Assets/uLipSync*
