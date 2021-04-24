@@ -241,19 +241,19 @@ MonoBehaviour:
   blendShapes:
   - phoneme: A
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.7
   - phoneme: I
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.4
   - phoneme: U
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.4
   - phoneme: E
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.6
   - phoneme: O
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.4
   applyVolume: 0
   openDuration: 0.05
   closeDuration: 0.1
@@ -1108,19 +1108,19 @@ MonoBehaviour:
   blendShapes:
   - phoneme: A
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.7
   - phoneme: I
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.4
   - phoneme: U
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.4
   - phoneme: E
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.6
   - phoneme: O
     index: 2
-    maxWeight: 0.5
+    maxWeight: 0.4
   applyVolume: 0
   openDuration: 0.05
   closeDuration: 0.1
