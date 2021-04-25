@@ -28,6 +28,9 @@ Assets/MyAssets/Motions/
 ├── standing_discuss02_zero_root_animation
 │   ├── standing_discuss_m_270744.fbx
 │   └── standing_discuss_m_270744.json
+├── greet
+│   ├── move_greet_m.fbx
+│   ├── move_greet_m.json
 ```
 
 - Parameter
