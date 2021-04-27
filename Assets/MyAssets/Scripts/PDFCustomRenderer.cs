@@ -10,7 +10,7 @@ public class PDFCustomRenderer : MonoBehaviour
     private int p = 0;
     private Texture2D tex;
     private int pageNum = 0;
-    Dictionary<int, PDFPage> pdfPages;
+    Dictionary<int, Texture2D> pdfPageTextures;
 
     void Start()
     {
@@ -41,20 +41,23 @@ public class PDFCustomRenderer : MonoBehaviour
 
     private void RenderPDF(int p)
     {
-        page = pdfPages[p];
-        tex = pdfDocument.Renderer.RenderPageToTexture(page, 960, 540);
-        GetComponent<MeshRenderer>().material.mainTexture = tex;
+        GetComponent<MeshRenderer>().material.mainTexture = pdfPageTextures[p];
     }
 
     private void LoadPDFPages()
     {
         pdfDocument = new PDFDocument("Assets/MyAssets/PDFs/2021_happybirthday.pdf", "");
         pageNum = pdfDocument.GetPageCount();
-        pdfPages = new Dictionary<int, PDFPage>();
+        pdfPageTextures = new Dictionary<int, Texture2D>();
 
-        for(int i = 0; i < pageNum; i++)
+        for(int i = 0; i <= pageNum; i++)
         {
-            pdfPages.Add(i, new PDFPage(pdfDocument, i));
+            page = new PDFPage(pdfDocument, i);
+            pdfPageTextures.Add(i, pdfDocument.Renderer.RenderPageToTexture(page, 960, 540));
+            if (page != null)
+            {
+                page.Dispose();
+            }
         }
     }
 }
