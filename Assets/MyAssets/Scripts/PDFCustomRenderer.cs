@@ -65,7 +65,7 @@ public class PDFCustomRenderer : MonoBehaviour
         ExtensionFilter[] extensions = new[] {
             new ExtensionFilter("PDF File", "pdf"),
         };
-        string[] paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, true);
+        string[] paths = StandaloneFileBrowser.OpenFilePanel("Open PDF File", "", extensions, false);
         return paths[0];
     }
 }
