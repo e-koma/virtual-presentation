@@ -6,10 +6,7 @@ using SFB;
 
 public class PDFCustomRenderer : MonoBehaviour
 {
-    private PDFDocument pdfDocument;
-    private PDFPage page;
     private int p = 0;
-    private Texture2D tex;
     private int pageNum = 0;
     Dictionary<int, Texture2D> pdfPageTextures;
 
@@ -47,7 +44,8 @@ public class PDFCustomRenderer : MonoBehaviour
     private void LoadPDFPages()
     {
         string pdfFileName = LoadPDFFile(); // for debug: "Assets/MyAssets/PDFs/2021_happybirthday.pdf"
-        pdfDocument = new PDFDocument(pdfFileName, "");
+        PDFDocument pdfDocument = new PDFDocument(pdfFileName, "");
+        PDFPage page;
         pageNum = pdfDocument.GetPageCount();
         pdfPageTextures = new Dictionary<int, Texture2D>();
 
