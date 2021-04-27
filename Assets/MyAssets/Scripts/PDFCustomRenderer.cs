@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Paroxe.PdfRenderer;
@@ -66,6 +67,20 @@ public class PDFCustomRenderer : MonoBehaviour
             new ExtensionFilter("PDF File", "pdf"),
         };
         string[] paths = StandaloneFileBrowser.OpenFilePanel("Open PDF File", "", extensions, false);
+        if (paths[0] == "")
+        {
+            QuitSystem();
+        }
+
         return paths[0];
+    }
+
+    private void QuitSystem()
+    {
+        #if UNITY_EDITOR
+           UnityEditor.EditorApplication.isPlaying = false;
+        #elif UNITY_STANDALONE
+            UnityEngine.Application.Quit();
+        #endif
     }
 }
