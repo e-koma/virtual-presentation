@@ -61,10 +61,13 @@ crashlytics-build.properties
 # MyAssets
 Assets/MyAssets/Motions*
 Assets/MyAssets/Models*
-# PDFViewer
-Assets/Paroxe*
 Assets/MyAssets/PDFs*
+# Unity Asset Store
+Assets/Paroxe*
 Assets/University Classroom*
-# Scripts/Core/Algorithm.csのBurstオプションを無効にしている Ref: https://twitter.com/AmadeusSVX/status/1351139404006518793?s=20
+# Unity Packages
+  # https://github.com/hecomi/uLipSync
+  # Scripts/Core/Algorithm.csのBurstオプションを無効にしている Ref: https://twitter.com/AmadeusSVX/status/1351139404006518793?s=20
 Assets/uLipSync*
+  # https://github.com/gkngkc/UnityStandaloneFileBrowser
 Assets/StandaloneFileBrowser*
