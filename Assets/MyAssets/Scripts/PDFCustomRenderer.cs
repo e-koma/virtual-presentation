@@ -13,8 +13,9 @@ public class PDFCustomRenderer : MonoBehaviour
 
     void Start()
     {
-        pdfDocument = new PDFDocument("Assets/MyAssets/PDFs/game_serverside.pdf", "");
+        pdfDocument = new PDFDocument("Assets/MyAssets/PDFs/2021_happybirthday.pdf", "");
         pageNum = pdfDocument.GetPageCount();
+        RenderPDF(p);
     }
 
     void LateUpdate()
@@ -27,12 +28,13 @@ public class PDFCustomRenderer : MonoBehaviour
         if (Input.GetKeyUp("left"))
         {
             p = Mathf.Max(--p, 0);
+            RenderPDF(p);
         }
         else if (Input.GetKeyUp("right") && pageNum > p)
         {
             p++;
+            RenderPDF(p);
         }
-        RenderPDF(p);
 
         yield return null;
     }
