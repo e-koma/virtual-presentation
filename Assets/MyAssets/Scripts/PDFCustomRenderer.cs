@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Paroxe.PdfRenderer;
+using SFB;
 
 public class PDFCustomRenderer : MonoBehaviour
 {
@@ -45,7 +46,8 @@ public class PDFCustomRenderer : MonoBehaviour
 
     private void LoadPDFPages()
     {
-        pdfDocument = new PDFDocument("Assets/MyAssets/PDFs/2021_happybirthday.pdf", "");
+        string pdfFileName = LoadPDFFile(); // for debug: "Assets/MyAssets/PDFs/2021_happybirthday.pdf"
+        pdfDocument = new PDFDocument(pdfFileName, "");
         pageNum = pdfDocument.GetPageCount();
         pdfPageTextures = new Dictionary<int, Texture2D>();
 
@@ -58,5 +60,14 @@ public class PDFCustomRenderer : MonoBehaviour
                 page.Dispose();
             }
         }
+    }
+
+    private string LoadPDFFile()
+    {
+        ExtensionFilter[] extensions = new[] {
+            new ExtensionFilter("PDF File", "pdf"),
+        };
+        string[] paths = StandaloneFileBrowser.OpenFilePanel("Open File", "", extensions, true);
+        return paths[0];
     }
 }
