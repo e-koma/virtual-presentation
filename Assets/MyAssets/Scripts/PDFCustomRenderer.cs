@@ -32,8 +32,7 @@ public class PDFCustomRenderer : MonoBehaviour
         }
         else if (Input.GetKeyUp("right") && pageNum > p)
         {
-            p++;
-            RenderPDF(p);
+            RenderPDF(++p);
         }
 
         yield return null;
