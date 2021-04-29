@@ -40,3 +40,6 @@ Assets/MyAssets/Motions/
     - Is Auto Start: true
 
 - [Sounds](http://www.soundgator.com/)
+
+# Build Prepare
+- Project Settins -> Player -> Configuration -> Microphone Usage Descriptiion(入力) -> Apply
