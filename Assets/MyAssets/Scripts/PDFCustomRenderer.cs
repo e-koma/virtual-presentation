@@ -44,7 +44,7 @@ public class PDFCustomRenderer : MonoBehaviour
 
     private void LoadPDFPages()
     {
-        string pdfFileName = LoadPDFFile(); // for debug: "Assets/MyAssets/PDFs/2021_happybirthday.pdf"
+        string pdfFileName = StartSceneButtonManager.pdfFileName; // for debug: "Assets/MyAssets/PDFs/2021_happybirthday.pdf"
         PDFDocument pdfDocument = new PDFDocument(pdfFileName, "");
         PDFPage page;
         pageNum = pdfDocument.GetPageCount();
@@ -59,28 +59,5 @@ public class PDFCustomRenderer : MonoBehaviour
                 page.Dispose();
             }
         }
-    }
-
-    private string LoadPDFFile()
-    {
-        ExtensionFilter[] extensions = new[] {
-            new ExtensionFilter("PDF File", "pdf"),
-        };
-        string[] paths = StandaloneFileBrowser.OpenFilePanel("Open PDF File", "", extensions, false);
-        if (paths[0] == "")
-        {
-            QuitSystem();
-        }
-
-        return paths[0];
-    }
-
-    private void QuitSystem()
-    {
-        #if UNITY_EDITOR
-           UnityEditor.EditorApplication.isPlaying = false;
-        #elif UNITY_STANDALONE
-            UnityEngine.Application.Quit();
-        #endif
     }
 }

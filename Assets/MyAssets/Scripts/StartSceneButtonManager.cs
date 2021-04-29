@@ -4,9 +4,11 @@ using SFB;
 
 public class StartSceneButtonManager : MonoBehaviour
 {
+    public static string pdfFileName;
+
     public void OnClickedStartButton()
     {
-        string pdfFileName = LoadPDFFile();
+        pdfFileName = LoadPDFFile();
         SceneManager.LoadScene("MainScene");
     }
 
