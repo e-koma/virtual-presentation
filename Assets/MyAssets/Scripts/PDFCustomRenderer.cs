@@ -44,7 +44,12 @@ public class PDFCustomRenderer : MonoBehaviour
 
     private void LoadPDFPages()
     {
-        string pdfFileName = StartSceneButtonManager.pdfFileName; // for debug: "Assets/MyAssets/PDFs/2021_happybirthday.pdf"
+        string pdfFileName = StartSceneButtonManager.pdfFileName;
+        if (pdfFileName == null)
+        {
+            pdfFileName = "Assets/MyAssets/PDFs/2021_happybirthday.pdf";
+        }
+
         PDFDocument pdfDocument = new PDFDocument(pdfFileName, "");
         PDFPage page;
         pageNum = pdfDocument.GetPageCount();
