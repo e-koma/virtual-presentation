@@ -63,8 +63,11 @@ Assets/MyAssets/Motions*
 Assets/MyAssets/Models*
 Assets/MyAssets/PDFs*
 # Unity Asset Store
+  # PDF Renderer
 Assets/Paroxe*
 Assets/University Classroom*
+  # Native File Browser
+Assets/PygmyMonkey*
 # Unity Packages
   # https://github.com/hecomi/uLipSync
   # Scripts/Core/Algorithm.csのBurstオプションを無効にしている Ref: https://twitter.com/AmadeusSVX/status/1351139404006518793?s=20
