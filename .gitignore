@@ -74,6 +74,10 @@ Assets/PygmyMonkey*
 Assets/uLipSync*
   # https://github.com/gkngkc/UnityStandaloneFileBrowser
 Assets/StandaloneFileBrowser*
+  # UniVRM (for VRM)
+Assets/UniGLTF*
+Assets/VRM*
+Assets/VRMShaders*
 
 # Takahashi Scene
   # Screen
