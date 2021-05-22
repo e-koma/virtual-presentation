@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: ddfc6aa8e8a84424089c3bded9f68e55
   - enabled: 1
-    path: Assets/Scenes/KomaScene.unity
+    path: Assets/Scenes/KomaMoveScene.unity
     guid: 31d0073f7585b430c855712d7cd50a1e
   m_configObjects: {}
