@@ -15,6 +15,7 @@ public class AnimationManager : MonoBehaviour
     {
         if (Input.GetKeyUp("enter") || Input.GetKeyUp("return"))
         {
+            animator.applyRootMotion = true;
             animator.SetTrigger("ClickEnter");
         }
     }
