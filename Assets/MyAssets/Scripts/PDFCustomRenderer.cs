@@ -39,7 +39,7 @@ public class PDFCustomRenderer : MonoBehaviour
 
     private void RenderPDF(int p)
     {
-        GetComponent<MeshRenderer>().material.mainTexture = pdfPageTextures[p];
+        this.GetComponent<MeshRenderer>().material.mainTexture = pdfPageTextures[p];
     }
 
     private void LoadPDFPages()

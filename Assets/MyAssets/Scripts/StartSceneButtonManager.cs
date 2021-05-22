@@ -9,7 +9,7 @@ public class StartSceneButtonManager : MonoBehaviour
     public void OnClickedStartButton()
     {
         pdfFileName = LoadPDFFile();
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("KomaScene");
     }
 
     public void OnClickedExitButton()
