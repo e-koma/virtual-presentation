@@ -42,5 +42,9 @@ Assets/MyAssets/Motions/
 
 - [Sounds](http://www.soundgator.com/)
 
+# Project Settings
+- Player -> Other Settings -> Active Input Handling -> Both (新旧Input Systemを有効化)
+
 # Build Prepare
-- Project Settins -> Player -> Configuration -> Microphone Usage Descriptiion(入力) -> Apply
+- Project Settings -> Player -> iOS -> Microphone Usage Description -> 適当な文字列入力
+- Project Settings -> Player -> Configuration -> Microphone Usage Descriptiion(入力) -> Apply
