@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class RunAnimation : MonoBehaviour
 {
-    public float moveSpeed = 2.0f;
+    public float moveSpeed = 1.5f;
 
     private GameObject myGameObject;
     private Vector3 latestPosition;
@@ -31,8 +31,8 @@ public class RunAnimation : MonoBehaviour
         padXValue = Gamepad.current.leftStick.ReadValue().x;
         padYValue = Gamepad.current.leftStick.ReadValue().y;
 
-        moveDirection.x = padXValue;
-        moveDirection.z = padYValue;
+        moveDirection.x = padXValue * moveSpeed;
+        moveDirection.z = padYValue * moveSpeed;
         moveDirection.y = Physics.gravity.y;
         charaController.Move(moveDirection * Time.deltaTime);
 
