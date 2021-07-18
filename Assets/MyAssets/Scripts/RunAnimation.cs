@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class RunAnimation : MonoBehaviour
 {
-    public float moveSpeed = 1.5f;
+    public float moveSpeed = 1.0f;
 
     private Vector3 latestPosition;
     private Animator animator;
@@ -21,6 +21,7 @@ public class RunAnimation : MonoBehaviour
         this.charaController = this.GetComponent<CharacterController>();
         this.moveDirection = new Vector3(0, 0, 0);
         this.latestPosition = new Vector3(0, 0, 0);
+        animator.applyRootMotion = false;
     }
 
     void LateUpdate()
@@ -29,6 +30,7 @@ public class RunAnimation : MonoBehaviour
         getInputValue();
         MovePosition();
         RotatePosition();
+        runAnimation();
     }
 
     void getInputValue()
@@ -52,8 +54,26 @@ public class RunAnimation : MonoBehaviour
 
         if (diff.magnitude > 0.01f)
         {
-            transform.rotation = Quaternion.LookRotation(diff * Time.deltaTime);
+            transform.rotation = Quaternion.LookRotation(diff);
         }
+    }
 
+    void runAnimation()
+    {
+        if (isMove())
+        {
+            animator.ResetTrigger("StandTrigger");
+            animator.SetTrigger("RunTrigger");
+        }
+        else
+        {
+            animator.ResetTrigger("RunTrigger");
+            animator.SetTrigger("StandTrigger");
+        }
+    }
+
+    bool isMove()
+    {
+        return Gamepad.current.leftStick.ReadValue().magnitude > 0;
     }
 }
