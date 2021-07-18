@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class RunAnimation : MonoBehaviour
 {
-    public float moveSpeed = 1.0f;
+    public float moveSpeed = 0.6f;
 
     private Vector3 latestPosition;
     private Animator animator;
@@ -20,7 +20,7 @@ public class RunAnimation : MonoBehaviour
         this.animator = this.GetComponent<Animator>();
         this.charaController = this.GetComponent<CharacterController>();
         this.moveDirection = new Vector3(0, 0, 0);
-        this.latestPosition = new Vector3(0, 0, 0);
+        this.latestPosition = this.gameObject.transform.position;
         animator.applyRootMotion = false;
     }
 
@@ -52,9 +52,9 @@ public class RunAnimation : MonoBehaviour
         diff = moveDirection - latestPosition;
         latestPosition = moveDirection;
 
-        if (diff.magnitude > 0.01f)
+        if (isMove())
         {
-            transform.rotation = Quaternion.LookRotation(diff);
+            charaController.transform.rotation = Quaternion.LookRotation(diff);
         }
     }
 
@@ -74,6 +74,6 @@ public class RunAnimation : MonoBehaviour
 
     bool isMove()
     {
-        return Gamepad.current.leftStick.ReadValue().magnitude > 0;
+        return Gamepad.current.leftStick.IsPressed();
     }
 }
