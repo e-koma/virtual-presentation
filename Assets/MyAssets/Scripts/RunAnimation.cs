@@ -7,7 +7,6 @@ public class RunAnimation : MonoBehaviour
 {
     public float moveSpeed = 1.5f;
 
-    private GameObject myGameObject;
     private Vector3 latestPosition;
     private Animator animator;
     private CharacterController charaController;
@@ -18,7 +17,6 @@ public class RunAnimation : MonoBehaviour
 
     void Start()
     {
-        this.myGameObject = this.gameObject;
         this.animator = this.GetComponent<Animator>();
         this.charaController = this.GetComponent<CharacterController>();
         this.moveDirection = new Vector3(0, 0, 0);
