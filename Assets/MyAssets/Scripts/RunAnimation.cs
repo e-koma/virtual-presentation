@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class RunAnimation : MonoBehaviour
 {
-    public float moveSpeed = 0.6f;
+    public float moveSpeed = 0.4f;
 
     private Vector3 latestPosition;
     private Animator animator;
@@ -54,7 +54,14 @@ public class RunAnimation : MonoBehaviour
 
         if (isMove())
         {
-            charaController.transform.rotation = Quaternion.LookRotation(diff);
+            if (diff == Vector3.zero)
+            {
+                charaController.transform.rotation = Quaternion.identity;
+            }
+            else
+            {
+                charaController.transform.rotation = Quaternion.LookRotation(diff);
+            }
         }
     }
 
