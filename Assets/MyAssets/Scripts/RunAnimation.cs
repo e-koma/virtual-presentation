@@ -81,6 +81,6 @@ public class RunAnimation : MonoBehaviour
 
     bool isMove()
     {
-        return Gamepad.current.leftStick.IsPressed();
+        return Gamepad.current.leftStick.ReadValue().magnitude > 0;
     }
 }
