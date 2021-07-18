@@ -6,18 +6,21 @@ using UnityEngine.InputSystem;
 public class RunAnimation : MonoBehaviour
 {
     public float moveSpeed = 0.4f;
+    public GameObject cameraObject;
 
     private Animator animator;
     private CharacterController charaController;
     private Vector3 moveDirection;
     private float padXValue;
     private float padYValue;
+    private Vector3 cameraOffset;
 
     void Start()
     {
         this.animator = this.GetComponent<Animator>();
         this.charaController = this.GetComponent<CharacterController>();
         this.moveDirection = new Vector3(0, 0, 0);
+        cameraOffset = cameraObject.transform.position - charaController.transform.position;
         animator.applyRootMotion = false;
     }
 
@@ -42,6 +45,7 @@ public class RunAnimation : MonoBehaviour
     void MovePosition()
     {
         charaController.Move(moveDirection * Time.deltaTime);
+        cameraObject.transform.position = charaController.transform.position + cameraOffset;
     }
 
     void RotatePosition()
