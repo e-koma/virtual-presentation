@@ -13,24 +13,55 @@ public class RunAnimation : MonoBehaviour
     private Vector3 moveDirection;
     private float padXValue;
     private float padYValue;
+
+    // Camera Parameters
     private Vector3 cameraOffset;
+    private Quaternion initialCameraRotation;
+    private bool enablePresentationMode;
+    private Transform presenCameraTransform;
 
     void Start()
     {
         this.animator = this.GetComponent<Animator>();
         this.charaController = this.GetComponent<CharacterController>();
         this.moveDirection = new Vector3(0, 0, 0);
+        enablePresentationMode = false;
         cameraOffset = cameraObject.transform.position - charaController.transform.position;
-        animator.applyRootMotion = false;
+        initialCameraRotation = cameraObject.transform.rotation;
+        presenCameraTransform = GameObject.Find("PresenCameraPosition").transform;
     }
 
     void LateUpdate()
     {
         if (Gamepad.current == null) return;
-        getInputValue();
-        MovePosition();
-        RotatePosition();
-        runAnimation();
+
+        getPresentationMode();
+        if (enablePresentationMode)
+        {
+            cameraObject.transform.position = presenCameraTransform.position;
+            cameraObject.transform.rotation = Quaternion.Euler(Vector3.zero);
+        }
+        else
+        {
+            getInputValue();
+            MovePosition();
+            RotatePosition();
+            runAnimation();
+            cameraObject.transform.position = charaController.transform.position + cameraOffset;
+            cameraObject.transform.rotation = initialCameraRotation;
+        }
+    }
+
+    void getPresentationMode()
+    {
+        if (Gamepad.current.yButton.isPressed)
+        {
+            enablePresentationMode = true;
+        }
+        else if (Gamepad.current.xButton.isPressed)
+        {
+            enablePresentationMode = false;
+        }
     }
 
     void getInputValue()
