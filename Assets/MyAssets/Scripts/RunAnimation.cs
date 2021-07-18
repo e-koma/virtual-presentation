@@ -7,11 +7,9 @@ public class RunAnimation : MonoBehaviour
 {
     public float moveSpeed = 0.4f;
 
-    private Vector3 latestPosition;
     private Animator animator;
     private CharacterController charaController;
     private Vector3 moveDirection;
-    private Vector3 diff;
     private float padXValue;
     private float padYValue;
 
@@ -20,7 +18,6 @@ public class RunAnimation : MonoBehaviour
         this.animator = this.GetComponent<Animator>();
         this.charaController = this.GetComponent<CharacterController>();
         this.moveDirection = new Vector3(0, 0, 0);
-        this.latestPosition = this.gameObject.transform.position;
         animator.applyRootMotion = false;
     }
 
@@ -49,11 +46,10 @@ public class RunAnimation : MonoBehaviour
 
     void RotatePosition()
     {
-        diff = moveDirection - latestPosition;
-        latestPosition = moveDirection;
 
         if (isMove())
         {
+            Vector3 diff = new Vector3(moveDirection.x, 0, moveDirection.z);
             if (diff == Vector3.zero)
             {
                 charaController.transform.rotation = Quaternion.identity;
