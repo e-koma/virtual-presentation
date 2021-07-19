@@ -58,7 +58,7 @@ public class PDFCustomRenderer : MonoBehaviour
         for(int i = 0; i <= pageNum; i++)
         {
             page = new PDFPage(pdfDocument, i);
-            pdfPageTextures.Add(i, pdfDocument.Renderer.RenderPageToTexture(page, 960, 540));
+            pdfPageTextures.Add(i, pdfDocument.Renderer.RenderPageToTexture(page, 1980, 1080));
             if (page != null)
             {
                 page.Dispose();
