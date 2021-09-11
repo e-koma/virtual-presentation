@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -33,7 +33,11 @@ public class RunAnimation : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Gamepad.current == null) return;
+        if (Gamepad.current == null)
+        {
+            Debug.Log("Gamepadが接続されていません");
+            return;
+        }
 
         getPresentationMode();
         if (enablePresentationMode)
