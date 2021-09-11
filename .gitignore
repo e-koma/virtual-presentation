@@ -75,6 +75,8 @@ Assets/PygmyMonkey*
 Assets/uLipSync*
   # https://github.com/gkngkc/UnityStandaloneFileBrowser
 Assets/StandaloneFileBrowser*
+ # Server Room
+Assets/iPoly3D*
   # UniVRM (for VRM)
 Assets/UniGLTF*
 Assets/VRM*
