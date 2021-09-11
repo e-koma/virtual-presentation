@@ -18,7 +18,6 @@ public class RunAnimation : MonoBehaviour
     // Camera Parameters
     private Vector3 cameraOffset;
     private Quaternion initialCameraRotation;
-    private Quaternion currentCameraRotation;
     private bool enablePresentationMode;
     private Transform presenCameraTransform;
 
@@ -30,7 +29,6 @@ public class RunAnimation : MonoBehaviour
         enablePresentationMode = false;
         cameraOffset = cameraObject.transform.position - charaController.transform.position;
         initialCameraRotation = cameraObject.transform.rotation;
-        currentCameraRotation = initialCameraRotation;
         presenCameraTransform = GameObject.Find("PresenCameraPosition").transform;
     }
 
