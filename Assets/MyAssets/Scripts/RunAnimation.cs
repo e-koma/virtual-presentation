@@ -7,18 +7,18 @@ public class RunAnimation : MonoBehaviour
 {
     public float moveSpeed = 0.4f;
     public GameObject cameraObject;
+    public GameObject cameraTarget;
 
     private Animator animator;
     private CharacterController charaController;
     private Vector3 moveDirection;
     private float leftPadXValue;
     private float leftPadYValue;
-    private float rightPadXValue;
-    private float rightPadYValue;
 
     // Camera Parameters
     private Vector3 cameraOffset;
     private Quaternion initialCameraRotation;
+    private Quaternion currentCameraRotation;
     private bool enablePresentationMode;
     private Transform presenCameraTransform;
 
@@ -30,6 +30,7 @@ public class RunAnimation : MonoBehaviour
         enablePresentationMode = false;
         cameraOffset = cameraObject.transform.position - charaController.transform.position;
         initialCameraRotation = cameraObject.transform.rotation;
+        currentCameraRotation = initialCameraRotation;
         presenCameraTransform = GameObject.Find("PresenCameraPosition").transform;
     }
 
@@ -53,8 +54,7 @@ public class RunAnimation : MonoBehaviour
             MovePosition();
             RotatePosition();
             runAnimation();
-            cameraObject.transform.position = charaController.transform.position + cameraOffset;
-            cameraObject.transform.rotation = initialCameraRotation;
+            MoveCamera();
         }
     }
 
@@ -74,8 +74,6 @@ public class RunAnimation : MonoBehaviour
     {
         leftPadXValue = Gamepad.current.leftStick.ReadValue().x;
         leftPadYValue = Gamepad.current.leftStick.ReadValue().y;
-        rightPadXValue = Gamepad.current.rightStick.ReadValue().x;
-        rightPadYValue = Gamepad.current.rightStick.ReadValue().y;
         moveDirection.x = leftPadXValue * moveSpeed;
         moveDirection.z = leftPadYValue * moveSpeed;
         moveDirection.y = Physics.gravity.y;
@@ -84,7 +82,6 @@ public class RunAnimation : MonoBehaviour
     void MovePosition()
     {
         charaController.Move(moveDirection * Time.deltaTime);
-        cameraObject.transform.position = charaController.transform.position + cameraOffset;
     }
 
     void RotatePosition()
@@ -117,6 +114,15 @@ public class RunAnimation : MonoBehaviour
             animator.SetTrigger("StandTrigger");
         }
     }
+
+    void MoveCamera()
+    {
+        cameraObject.transform.position = charaController.transform.position + cameraOffset;
+        cameraObject.transform.RotateAround(cameraTarget.transform.position, Vector3.up, Gamepad.current.rightStick.ReadValue().x * 150 * Time.deltaTime);
+        cameraObject.transform.LookAt(cameraTarget.transform.position);
+        cameraOffset = cameraObject.transform.position - charaController.transform.position;
+    }
+
 
     bool isMove()
     {
