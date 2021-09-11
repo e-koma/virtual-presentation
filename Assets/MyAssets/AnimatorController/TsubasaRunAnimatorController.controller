@@ -135,7 +135,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TsubasaAnimatorController
+  m_Name: TsubasaRunAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: RunTrigger
