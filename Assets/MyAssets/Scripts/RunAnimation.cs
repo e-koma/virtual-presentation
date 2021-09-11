@@ -11,8 +11,10 @@ public class RunAnimation : MonoBehaviour
     private Animator animator;
     private CharacterController charaController;
     private Vector3 moveDirection;
-    private float padXValue;
-    private float padYValue;
+    private float leftPadXValue;
+    private float leftPadYValue;
+    private float rightPadXValue;
+    private float rightPadYValue;
 
     // Camera Parameters
     private Vector3 cameraOffset;
@@ -70,10 +72,12 @@ public class RunAnimation : MonoBehaviour
 
     void getInputValue()
     {
-        padXValue = Gamepad.current.leftStick.ReadValue().x;
-        padYValue = Gamepad.current.leftStick.ReadValue().y;
-        moveDirection.x = padXValue * moveSpeed;
-        moveDirection.z = padYValue * moveSpeed;
+        leftPadXValue = Gamepad.current.leftStick.ReadValue().x;
+        leftPadYValue = Gamepad.current.leftStick.ReadValue().y;
+        rightPadXValue = Gamepad.current.rightStick.ReadValue().x;
+        rightPadYValue = Gamepad.current.rightStick.ReadValue().y;
+        moveDirection.x = leftPadXValue * moveSpeed;
+        moveDirection.z = leftPadYValue * moveSpeed;
         moveDirection.y = Physics.gravity.y;
     }
 
