@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using SFB;
 
@@ -9,7 +9,7 @@ public class StartSceneButtonManager : MonoBehaviour
     public void OnClickedStartButton()
     {
         pdfFileName = LoadPDFFile();
-        SceneManager.LoadScene("KomaStateScene");
+        SceneManager.LoadScene("ServerRoom");
     }
 
     public void OnClickedExitButton()
