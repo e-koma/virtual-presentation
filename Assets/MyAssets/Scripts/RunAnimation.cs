@@ -103,6 +103,7 @@ public class RunAnimation : MonoBehaviour
     {
         if (isMove())
         {
+            animator.ResetTrigger("GreetTrigger");
             animator.ResetTrigger("StandTrigger");
             animator.SetTrigger("RunTrigger");
         }
@@ -110,6 +111,11 @@ public class RunAnimation : MonoBehaviour
         {
             animator.ResetTrigger("RunTrigger");
             animator.SetTrigger("StandTrigger");
+
+            if (Gamepad.current.aButton.isPressed)
+            {
+                animator.SetTrigger("GreetTrigger");
+            }
         }
     }
 
