@@ -44,6 +44,7 @@ Assets/MyAssets/Motions/
 
 # Project Settings
 - Player -> Other Settings -> Active Input Handling -> Both (新旧Input Systemを有効化)
+- Player -> Other Settings -> Configuration -> Api Compatibility Level -> .NET 4.x
 
 # Build Prepare
 - Project Settings -> Player -> iOS -> Microphone Usage Description -> 適当な文字列入力
