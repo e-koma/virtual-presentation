@@ -47,7 +47,7 @@ public class PDFCustomRenderer : MonoBehaviour
         string pdfFileName = StartSceneButtonManager.pdfFileName;
         if (pdfFileName == null)
         {
-            pdfFileName = "Assets/MyAssets/PDFs/AkatsukiDevMeetup2021Komai.pdf";
+            pdfFileName = "Assets/MyAssets/PDFs/current_presen.pdf";
         }
 
         PDFDocument pdfDocument = new PDFDocument(pdfFileName, "");
