@@ -58,30 +58,34 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# .lfsconfigには個人LFS URLが記載されているのでignoreする
+.lfsconfig
+
 # MyAssets
-Assets/MyAssets/Motions*
-Assets/MyAssets/Models*
-Assets/MyAssets/PDFs*
+  #Assets/MyAssets/Motions*
+  #Assets/MyAssets/Models*
+  #Assets/MyAssets/PDFs*
+
 # Unity Asset Store
-  # PDF Renderer
-Assets/Paroxe*
-Assets/University Classroom*
-Assets/Summer_Beach_Cartoon_Pack*
+# PDF Renderer
+  #Assets/Paroxe*
+  #Assets/University Classroom*
+  #Assets/Summer_Beach_Cartoon_Pack*
 # Unity Packages
   # https://github.com/hecomi/uLipSync
-  # Scripts/Core/Algorithm.csのBurstオプションを無効にしている Ref: https://twitter.com/AmadeusSVX/status/1351139404006518793?s=20
-Assets/uLipSync*
+    # Scripts/Core/Algorithm.csのBurstオプションを無効にしている Ref: https://twitter.com/AmadeusSVX/status/1351139404006518793?s=20
+    #Assets/uLipSync*
   # https://github.com/gkngkc/UnityStandaloneFileBrowser
-Assets/StandaloneFileBrowser*
- # Server Room
-Assets/iPoly3D*
-Assets/TeleportFade*
-  # UniVRM (for VRM)
-Assets/UniGLTF*
-Assets/VRM*
-Assets/VRMShaders*
-Assets/unity-chan*
+    #Assets/StandaloneFileBrowser*
+  # Server Room
+    #Assets/iPoly3D*
+    #Assets/TeleportFade*
+  #UniVRM (for VRM)
+    #Assets/UniGLTF*
+    #Assets/VRM*
+    #Assets/VRMShaders*
+    #Assets/unity-chan*
 
 # Takahashi Scene
   # Screen
-Assets/TurboSquid_Models*
+  #Assets/TurboSquid_Models*
