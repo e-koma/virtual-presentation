@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b589176a34b344b9ccbee2b7e7114a, type: 3}
+  m_Name: Meta
+  m_EditorClassIdentifier: 
+  ExporterVersion: UniVRM-0.64.0
+  Title: takahashi-sama
+  Version: 1.0
+  Author: real-avatar.com
+  ContactInformation: info@real-avatar.com
+  Reference: www.real-avatar.com/tos.html
+  Thumbnail: {fileID: 0}
+  AllowedUser: 1
+  ViolentUssage: 0
+  SexualUssage: 0
+  CommercialUssage: 1
+  OtherPermissionUrl: www.real-avatar.com/tos.html
+  LicenseType: 8
+  OtherLicenseUrl: www.real-avatar.com/tos.html
