@@ -2,6 +2,10 @@
 - Unity 2020.3.6f1
 
 # Assets
+- GitLFS同期
+```
+git config -f .lfsconfig lfs.url 個人AWSのLFS URL)
+```
 
 - Models
 ```
