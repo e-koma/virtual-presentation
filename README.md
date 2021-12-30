@@ -1,11 +1,12 @@
 # virtual-presentation
 - Unity 2020.3.6f1
 
+# GitLFS同期
+```
+git config -f .lfsconfig lfs.url (個人AWSのLFS URL)
+```
+
 # Assets
-- GitLFS同期
-```
-git config -f .lfsconfig lfs.url 個人AWSのLFS URL)
-```
 
 - Models
 ```
