@@ -101,20 +101,20 @@ public class RunAnimation : MonoBehaviour
 
     void runAnimation()
     {
+        animator.ResetTrigger("GreetTrigger");
+        animator.ResetTrigger("JumpTrigger");
+
         if (isJump())
         {
             animator.SetTrigger("JumpTrigger");
         }
         else if (isMove())
         {
-            animator.ResetTrigger("JumpTrigger");
-            animator.ResetTrigger("GreetTrigger");
             animator.ResetTrigger("StandTrigger");
             animator.SetTrigger("RunTrigger");
         }
         else
         {
-            animator.ResetTrigger("JumpTrigger");
             animator.ResetTrigger("RunTrigger");
             animator.SetTrigger("StandTrigger");
 
