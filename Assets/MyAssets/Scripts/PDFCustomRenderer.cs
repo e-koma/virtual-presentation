@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Paroxe.PdfRenderer;
 using SFB;
 
@@ -24,12 +25,12 @@ public class PDFCustomRenderer : MonoBehaviour
 
     private IEnumerator PressTheButton()
     {
-        if (Input.GetKeyUp("left"))
+        if (isInputLeft())
         {
             p = Mathf.Max(--p, 0);
             RenderPDF(p);
         }
-        else if (Input.GetKeyUp("right") && pageNum > p)
+        else if (isInputRight() && pageNum > p)
         {
             RenderPDF(++p);
         }
@@ -64,5 +65,15 @@ public class PDFCustomRenderer : MonoBehaviour
                 page.Dispose();
             }
         }
+    }
+
+    private bool isInputLeft()
+    {
+        return Input.GetKeyUp("left") || (Gamepad.current != null && Gamepad.current.dpad.left.wasReleasedThisFrame);
+    }
+
+    private bool isInputRight()
+    {
+        return Input.GetKeyUp("right") || (Gamepad.current != null && Gamepad.current.dpad.right.wasReleasedThisFrame);
     }
 }
