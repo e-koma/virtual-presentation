@@ -101,18 +101,24 @@ public class RunAnimation : MonoBehaviour
 
     void runAnimation()
     {
-        if (isMove())
+        if (isJump())
         {
+            animator.SetTrigger("JumpTrigger");
+        }
+        else if (isMove())
+        {
+            animator.ResetTrigger("JumpTrigger");
             animator.ResetTrigger("GreetTrigger");
             animator.ResetTrigger("StandTrigger");
             animator.SetTrigger("RunTrigger");
         }
         else
         {
+            animator.ResetTrigger("JumpTrigger");
             animator.ResetTrigger("RunTrigger");
             animator.SetTrigger("StandTrigger");
 
-            if (Gamepad.current.aButton.isPressed)
+            if (Gamepad.current.bButton.isPressed)
             {
                 animator.SetTrigger("GreetTrigger");
             }
@@ -131,5 +137,17 @@ public class RunAnimation : MonoBehaviour
     bool isMove()
     {
         return Gamepad.current.leftStick.ReadValue().magnitude > 0;
+    }
+
+    bool isJump()
+    {
+        if (Gamepad.current.aButton.isPressed)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
