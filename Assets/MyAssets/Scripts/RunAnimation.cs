@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class RunAnimation : MonoBehaviour
 {
-    public float moveSpeed = 0.4f;
     public GameObject cameraObject;
     public GameObject cameraTarget;
 
@@ -75,8 +74,6 @@ public class RunAnimation : MonoBehaviour
 
         cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
         moveDirection = cameraForward * Input.GetAxis("Vertical") + Camera.main.transform.right * Input.GetAxis("Horizontal");
-        moveDirection.x *= moveSpeed;
-        moveDirection.z *= moveSpeed;
         moveDirection.y = Physics.gravity.y;
 
         charaController.Move(moveDirection * Time.deltaTime);
