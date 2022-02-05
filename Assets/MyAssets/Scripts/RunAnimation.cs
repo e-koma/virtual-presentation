@@ -11,6 +11,7 @@ public class RunAnimation : MonoBehaviour
 
     private Animator animator;
     private CharacterController charaController;
+    private Vector3 cameraForward;
     private Vector3 moveDirection;
     private float leftPadXValue;
     private float leftPadYValue;
@@ -48,7 +49,6 @@ public class RunAnimation : MonoBehaviour
         }
         else
         {
-            getInputValue();
             MovePosition();
             RotatePosition();
             runAnimation();
@@ -68,17 +68,17 @@ public class RunAnimation : MonoBehaviour
         }
     }
 
-    void getInputValue()
-    {
-        leftPadXValue = Gamepad.current.leftStick.ReadValue().x;
-        leftPadYValue = Gamepad.current.leftStick.ReadValue().y;
-        moveDirection.x = leftPadXValue * moveSpeed;
-        moveDirection.z = leftPadYValue * moveSpeed;
-        moveDirection.y = Physics.gravity.y;
-    }
-
     void MovePosition()
     {
+        // leftPadXValue = Gamepad.current.leftStick.ReadValue().x;
+        // leftPadYValue = Gamepad.current.leftStick.ReadValue().y;
+
+        cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+        moveDirection = cameraForward * Input.GetAxis("Vertical") + Camera.main.transform.right * Input.GetAxis("Horizontal");
+        moveDirection.x *= moveSpeed;
+        moveDirection.z *= moveSpeed;
+        moveDirection.y = Physics.gravity.y;
+
         charaController.Move(moveDirection * Time.deltaTime);
     }
 
