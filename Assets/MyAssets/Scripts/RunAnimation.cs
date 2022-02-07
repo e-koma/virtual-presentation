@@ -8,6 +8,7 @@ public class RunAnimation : MonoBehaviour
     public float moveSpeed = 0.4f;
     public GameObject cameraObject;
     public GameObject cameraTarget;
+    public AudioClip[] jumpAudioClips;
 
     private Animator animator;
     private CharacterController charaController;
@@ -22,6 +23,9 @@ public class RunAnimation : MonoBehaviour
     private bool enablePresentationMode;
     private Transform presenCameraTransform;
 
+    // Audio
+    private AudioSource jumpAudioSource;
+
     void Start()
     {
         this.animator = this.GetComponent<Animator>();
@@ -31,6 +35,9 @@ public class RunAnimation : MonoBehaviour
         cameraOffset = cameraObject.transform.position - charaController.transform.position;
         initialCameraRotation = cameraObject.transform.rotation;
         presenCameraTransform = GameObject.Find("PresenCameraPosition").transform;
+
+        jumpAudioSource = this.transform.Find("JumpAudio").gameObject.GetComponent<AudioSource>();
+
     }
 
     void LateUpdate()
@@ -107,6 +114,11 @@ public class RunAnimation : MonoBehaviour
         if (isJump())
         {
             animator.SetTrigger("JumpTrigger");
+
+            if (!jumpAudioSource.isPlaying)
+            {
+                jumpAudioSource.PlayOneShot(jumpAudioClips[Random.Range(1, jumpAudioClips.Length)]);
+            }
         }
         else if (isMove())
         {
