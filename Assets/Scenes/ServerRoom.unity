@@ -7198,6 +7198,7 @@ MonoBehaviour:
   moveSpeed: 5
   cameraObject: {fileID: 0}
   cameraTarget: {fileID: 0}
+  jumpAudioClips: []
 --- !u!143 &1458624224
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8597,6 +8598,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7505213867602829668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838472301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838472302}
+  - component: {fileID: 1838472303}
+  m_Layer: 0
+  m_Name: JumpAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1838472302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838472301}
+  m_LocalRotation: {x: -0, y: -0.99792963, z: 0, w: 0.06431527}
+  m_LocalPosition: {x: 0, y: 0.16325, z: 0}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_Children: []
+  m_Father: {fileID: 2094851578}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1838472303
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838472301}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1842129987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9830,6 +9958,16 @@ MonoBehaviour:
   moveSpeed: 4
   cameraObject: {fileID: 436388386}
   cameraTarget: {fileID: 629372849}
+  jumpAudioClips:
+  - {fileID: 8300000, guid: ebc7838d75c754c4f8901b94bbb5e3c6, type: 3}
+  - {fileID: 8300000, guid: 237839539992a4de6a0ae481bb7e95d0, type: 3}
+  - {fileID: 8300000, guid: 1ff42e5c6d6354778964a8c57a0b5eb5, type: 3}
+  - {fileID: 8300000, guid: b764cae0cdf6e482aa6e9c72b6f9cad0, type: 3}
+  - {fileID: 8300000, guid: 770936ef3859c41f79462d4f6a843af8, type: 3}
+  - {fileID: 8300000, guid: 72ca100142a4442b9a9c17030f64ed09, type: 3}
+  - {fileID: 8300000, guid: 575bdfbe0e97d469199cc96741361078, type: 3}
+  - {fileID: 8300000, guid: 7f05592228b244be085301b10e4f2c88, type: 3}
+  - {fileID: 8300000, guid: ca36156eb95644cd4b59ae4da5fbbbe1, type: 3}
 --- !u!114 &2094851573
 MonoBehaviour:
   m_ObjectHideFlags: 0
