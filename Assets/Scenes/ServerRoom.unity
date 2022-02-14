@@ -3419,7 +3419,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 671865b556bf44079992d50ed8bef13e, type: 2}
     - target: {fileID: 9500000, guid: 1e3805c1f11b242a4a46a499cf8c7648, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 1e3805c1f11b242a4a46a499cf8c7648, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
