@@ -1179,19 +1179,19 @@ MonoBehaviour:
   blendShapes:
   - phoneme: A
     index: 2
-    maxWeight: 0.7
+    maxWeight: 1
   - phoneme: I
     index: 2
-    maxWeight: 0.4
+    maxWeight: 0.7
   - phoneme: U
     index: 2
-    maxWeight: 0.4
+    maxWeight: 0.7
   - phoneme: E
     index: 2
-    maxWeight: 0.6
+    maxWeight: 0.9
   - phoneme: O
     index: 2
-    maxWeight: 0.4
+    maxWeight: 0.7
   applyVolume: 0
   openDuration: 0.05
   closeDuration: 0.1
@@ -1504,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 57978dbf82b1b4f8a870fdbcfe6701ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.82
+      value: -5.67
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 57978dbf82b1b4f8a870fdbcfe6701ff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1512,7 +1512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 57978dbf82b1b4f8a870fdbcfe6701ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.84
+      value: 9.69
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 57978dbf82b1b4f8a870fdbcfe6701ff, type: 3}
       propertyPath: m_LocalRotation.w
