@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TsubasaBeachLoginScene.unity
     guid: 7b3a654f6713b426f9bc5c71cd0409db
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ServerRoom.unity
     guid: 688c09dfde7a6f14e983a467de744476
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KomaStateSceneSuite.unity
     guid: 47aeca023ceb549c7b763d35a60805bb
+  - enabled: 0
+    path: Assets/Scenes/KomaStateSceneTsubasa.unity
+    guid: ce9e8f1e92ccb484d85105fb8b801507
   m_configObjects: {}
