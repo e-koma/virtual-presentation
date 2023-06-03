@@ -5,6 +5,8 @@
 ```
 git config -f .lfsconfig lfs.url (個人AWSのLFS URL)
 ```
+.lfsをダウンロード
+起動時にエラーがでたらPacage Magagerなどから不要アセット削除
 
 # Assets
 

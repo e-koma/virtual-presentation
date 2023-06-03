@@ -20,7 +20,9 @@ namespace Paroxe.PdfRenderer.Internal.Viewer
 #if !UNITY_WEBGL
         private CanvasGroup m_ContainerCanvasGroup;
         private PDFViewerLeftPanelScrollbar m_Scrollbar;
+#pragma warning disable 414 // Remove unread private members
         private bool m_Initialized = false;
+#pragma warning restore 414 // Remove unread private members
         private RectTransform m_LeftPanel;
         private bool m_Loaded = false;
         private PDFDocument m_Document;
