@@ -1,6 +1,10 @@
 # virtual-presentation
 - Unity 2020.3.6f1
 
+# Note
+- ※ M1 Mac 以降で build時に`DllNotFoundException: StandaloneFileBrowser` が出るが Intel 64-bit buildでひとまず回避できる
+  - https://github.com/gkngkc/UnityStandaloneFileBrowser/issues/109
+
 # GitLFS同期
 ```
 git config -f .lfsconfig lfs.url (個人AWSのLFS URL)
