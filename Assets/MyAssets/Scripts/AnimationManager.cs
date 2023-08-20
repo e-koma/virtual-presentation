@@ -69,7 +69,12 @@ public class AnimationManager : MonoBehaviour
 
     bool isClickEnter()
     {
-        return Input.GetKeyUp("enter") || Input.GetKeyUp("return");
+        if (Gamepad.current == null)
+        {
+            ;
+        }
+
+        return Input.GetKeyUp("enter") || Input.GetKeyUp("return") || Gamepad.current.bButton.wasReleasedThisFrame;
     }
 
     void getPresentationMode()
