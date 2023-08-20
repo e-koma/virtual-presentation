@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AnimationManager : MonoBehaviour
 {
@@ -8,13 +9,33 @@ public class AnimationManager : MonoBehaviour
     private enum PresenState { BeforeStage, EnterStage, StartPresen, FinishPresen }
     private int presenState = (int)PresenState.BeforeStage;
 
+    // Camera Parameters
+    private GameObject cameraObject;
+    private Vector3 mainCameraPosition;
+    private Vector3 presenCameraPosition;
+    private bool enablePresentationMode;
+
     void Start()
     {
         this.animator = this.GetComponent<Animator>();
+        cameraObject = GameObject.Find("Main Camera");
+        mainCameraPosition = cameraObject.transform.position;
+        presenCameraPosition = GameObject.Find("PresenCameraPosition").transform.position;
     }
 
     void LateUpdate()
     {
+        getPresentationMode();
+        if (enablePresentationMode)
+        {
+            cameraObject.transform.position = presenCameraPosition;
+            return;
+        }
+        else
+        {
+            cameraObject.transform.position = mainCameraPosition;
+        }
+
         switch (presenState)
         {
             case (int)PresenState.BeforeStage:
@@ -49,5 +70,22 @@ public class AnimationManager : MonoBehaviour
     bool isClickEnter()
     {
         return Input.GetKeyUp("enter") || Input.GetKeyUp("return");
+    }
+
+    void getPresentationMode()
+    {
+        if (Gamepad.current == null)
+        {
+            return;
+        }
+
+        if (Gamepad.current.yButton.isPressed)
+        {
+            enablePresentationMode = true;
+        }
+        else if (Gamepad.current.xButton.isPressed)
+        {
+            enablePresentationMode = false;
+        }
     }
 }
