@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlaySounds : MonoBehaviour
 {
@@ -15,9 +16,18 @@ public class PlaySounds : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Input.GetKeyUp("space") && audioSource.clip != null)
+        if (isInputDown())
         {
             audioSource.Play();
         }
+    }
+
+    private bool isInputDown()
+    {
+        if (audioSource.clip == null) {
+            return false;
+        }
+
+        return Input.GetKeyUp("space") || (Gamepad.current != null && Gamepad.current.dpad.down.wasReleasedThisFrame);
     }
 }
